@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: homework0
+Description: Description of homework0
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

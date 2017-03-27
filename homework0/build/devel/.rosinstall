@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/chuck/catkin_ws/src/homework0/build/devel/setup.sh

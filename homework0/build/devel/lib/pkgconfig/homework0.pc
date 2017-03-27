@@ -1,0 +1,8 @@
+prefix=/home/chuck/catkin_ws/src/homework0/build/devel
+
+Name: homework0
+Description: Description of homework0
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/chuck/catkin_ws/src/homework0/build/devel/lib 
+Requires: 
