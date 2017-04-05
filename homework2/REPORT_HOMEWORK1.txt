@@ -1,0 +1,14 @@
+LASER x: 0.05 y: 0 theta: 0 stamp: 131.2
+LASER x: 0.05 y: 0 theta: 0 stamp: 131.3
+LASER x: 0.05 y: 0 theta: 0 stamp: 131.4
+LASER x: 0.05 y: 0 theta: 0 stamp: 131.5
+LASER x: 0.05 y: 0 theta: 0 stamp: 131.6
+LASER x: 0.05 y: 0 theta: 0 stamp: 131.7
+LASER x: 0.05 y: 0 theta: 0 stamp: 131.7
+LASER x: 0.05 y: 0 theta: 0 stamp: 131.9
+LASER x: 0.05 y: 0 theta: 0 stamp: 131.9
+LASER x: 0.05 y: 0 theta: 0 stamp: 132.1
+LASER x: 0.05 y: 0 theta: 0 stamp: 132.2
+LASER x: 0.05 y: 0 theta: 0 stamp: 132.3
+LASER x: 0.05 y: 0 theta: 0 stamp: 132.4
+LASER x: 0.05 y: 0 theta: 0 stamp: 132.5
