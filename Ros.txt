@@ -1,0 +1,67 @@
+. ~/catkin_ws/devel/setup.bash #ti fa usare roscd beginnertutorials
+
+catkin_make --pkg homework1 #make solo del package  homework1
+
+
+
+	-----HOMEWORK 0-------
+nodo che
+- sottoscrive base scan
+- pubblica sul topic nuovo la distanza minima del robot(laser sul robot) la distanza dall'ostcolo piu    vicino
+
+comandi:
+rosrun homework0 min_distance 
+rostopic echo /xtopic/data #printa il minimo
+
+
+rosrun stage_ros stageros $(rospack find stage_ros)/world/willow-erratic.world #avvia stage
+
+rostopic echo /cmd_vel #controlla che c'è  risposta
+
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py #avvia il nodo teleop
+
+rostopic echo /nome_topic/nome_campo_msg
+	-es rostopic echo /base_scan/angle_min
+
+
+rosrun joy joy_node #apre joystick
+rosrun teleop_twist_joy teleop_node #tradurre joystick 
+	------------MARRTINO COMANDI------------
+rosrun arduino_robot arduino_robot_monitor -serial-port /dev/ttyACM1 #lancia i comandi sui marrtino
+rosrun arduino_robot arduino_robot_shell /dev/ttyACM1   #sell per settare i parametri
+
+----------HOMEWORK 2-------------
+rosrun tf tf_echo odom base_laser_link #ECHO DI LASER W.R.T. ODOM (X,Y,THETA)
+
+----------HOMEWORK 3------------------
+roslaunch navigation_stage move_base_amcl_2.5cm.launch #LANCIA IL FILE LAUNCH.
+
+rosbag record  -O mylaserdata /base_scan /tf #Crei una bag 
+
+rosparam set use_sim_time true
+rosrun gmapping slam_gmapping scan:=base_scan
+rosbag play --clock <nomedellabag> #aspetta che finisca di registrare
+rosrun map_server map_saver -f <map_name> #salva la mappa in file pmg
+
+--------------------------------------------------------------------------------------
+rosrun thin_joystick_teleop joy_teleoputton _joy_device:=/dev/input/js1 #lanci controller
+
+catkin_make --pkg p1 #compilare
+roslaunch p1 lab_0.launch #lanci il launch
+
+
+Quando il laser o orazio non funzionano, allora li fai ripartire con:
+sudo service udev restart
+roscore
+
+
+rosrun thin_joystick_teleop joy_teleop_button joy_device:=/dev/input/js0
+rosrun srrg_orazio_ros orazio_robot_node _serialevice:=/dev/orazio
+rosrun srrg_core_ros srrg_state_publisher_node catkin_ws/src/srrg_core_ros/transforms/errazio_transforms.txt 
+rosrun thin_hokuyo thin_hokuyo_node _serial_port:=/dev/lidar_hokuyo _topic:=/base_scan
+
+
+joy_teleop_node_start_and_stop
+rosrun thin_hokuyo thin_hokuyo_node _serial_port:=/dev/lidar_hokuyo _topic:=/base_scan
+rosrun srrg_core_ros srrg_state_publisher_node errazio_transforms.txt
+Per controllare le periferiche connesse al pc: dmesg
