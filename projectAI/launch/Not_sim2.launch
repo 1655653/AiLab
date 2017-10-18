@@ -1,0 +1,11 @@
+<launch>
+  <master auto="start"/>
+  <param name="/use_sim_time" value="false"/>
+  
+  <include file="$(find projectAI)/move_base_config/slam_gmapping.xml"/>  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find projectAI)/single_robot.rviz">
+  </node>
+  
+ 
+  
+</launch>
