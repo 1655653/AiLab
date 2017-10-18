@@ -14,3 +14,4 @@ The scope of this little project is:
 I've added a module for debugging called joy_teleop_button. So if u want to use a joystick to start or stopping the robot you can do it.
 
 Enjoy.
+for other infos contact on longo.1655653@studenti.uniroma1.it
